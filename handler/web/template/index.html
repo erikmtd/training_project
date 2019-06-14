@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>list data</title>
+</head>
+
+<body>
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>MSISDN</td>
+            <td>Email</td>
+            <td>birth_date</td>
+            <td>created_time</td>
+            <td>update_time</td>
+            <td>user_age</td>
+            <td>calculation</td>
+        </tr>
+    </thead>
+    <tbody>
+            {{ range .User}}
+                <tr>
+                    <td>{{.UserID}}</td>
+                    <td>{{.Fullname}}</td>
+                    <td>{{.MSISDN}}</td>
+                    <td>{{.Email}}</td>
+                    <td>{{.BirthDate}}</td>
+                    <td>{{.CreateTime}}</td>
+                    <td></td>
+                    <td>{{.Age}}</td>
+                    <td></td>
+                </tr>
+            {{ end}}
+    </tbody>
+</table>
+Filter by name
+<form method="GET">
+    <input name="name"/>
+    <input type="submit"/>
+</form>
+
+<br>
+Visitor Count: {{ .Vc }}
+</body>
+</html>
